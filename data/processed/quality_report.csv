@@ -1,0 +1,22 @@
+,Missing values,Data type
+customerID,0,str
+gender,0,str
+SeniorCitizen,0,int64
+Partner,0,str
+Dependents,0,str
+tenure,0,int64
+PhoneService,0,str
+MultipleLines,0,str
+InternetService,0,str
+OnlineSecurity,0,str
+OnlineBackup,0,str
+DeviceProtection,0,str
+TechSupport,0,str
+StreamingTV,0,str
+StreamingMovies,0,str
+Contract,0,str
+PaperlessBilling,0,str
+PaymentMethod,0,str
+MonthlyCharges,0,float64
+TotalCharges,0,float64
+Churn,0,str
