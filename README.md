@@ -65,7 +65,183 @@ The objective of this project is to build an end-to-end **Customer Churn Intelli
 - Provide business-level insights through Power BI.
 - Provide an interactive prediction and analytics interface through Streamlit.
 
+## 🏗️ Project Architecture
+
+The platform follows an end-to-end workflow that takes raw customer data through analysis, machine learning, explainability, segmentation, and business intelligence before delivering predictions and retention insights through Power BI and Streamlit.
+
 <p align="center">
-  <img src="visuals/images/design.png" width="950">
+  <img src="visuals/images/design.png" width="650">
 </p>
+
+
+---
+
+## 🔄 Project Development Workflow
+
+The project was developed in a structured, phase-by-phase workflow, starting from business understanding and data analysis and progressing toward machine learning, explainability, business intelligence, application development, and deployment.
+
+| Phase | Development Stage | Outcome |
+|---|---|---|
+| 01 | Business Understanding | Defined the churn problem and business objectives |
+| 02 | Dataset Selection | Selected and understood the customer churn dataset |
+| 03 | SQL Analysis | Performed customer and churn analysis using SQL |
+| 04 | Data Cleaning | Handled missing values, data types, and inconsistencies |
+| 05 | Exploratory Data Analysis | Identified churn patterns and important relationships |
+| 06 | Feature Engineering | Prepared and transformed features for modeling |
+| 07 | Machine Learning Pipeline | Built the reusable preprocessing and modeling pipeline |
+| 08 | Model Evaluation | Compared models using classification and validation metrics |
+| 09 | Explainable AI | Used SHAP to understand model predictions |
+| 10 | Customer Segmentation | Grouped customers into meaningful segments |
+| 11 | Recommendation Engine | Generated retention-focused recommendations |
+| 12 | Executive Power BI Dashboard | Converted analysis into business-facing insights |
+| 13 | Streamlit Application | Built an interactive customer churn intelligence interface |
+| 14 | Deployment | Prepared the application and project for deployment |
+
+> **Current status:** The complete end-to-end workflow has been implemented from raw customer data through prediction, explainability, business intelligence, application development, and deployment preparation.
+
+---
+
+## 🗄️ Dataset & SQL Analysis
+
+### Dataset
+
+The project uses a customer-level telecom churn dataset containing demographic information, account details, service information, contract details, and churn status.
+
+Key information includes:
+
+| Category | Examples |
+|---|---|
+| Customer Information | Customer ID, Gender, Senior Citizen, Partner, Dependents |
+| Account Information | Tenure, Contract, Payment Method |
+| Services | Phone Service, Internet Service |
+| Financial Information | Monthly Charges, Total Charges |
+| Target | Churn |
+
+### SQL Analysis
+
+SQL was used as an initial analytical layer before the machine learning workflow.
+
+The analysis focused on understanding:
+
+- Overall customer and churn counts
+- Churn rate
+- Churn across contract types
+- Churn across payment methods
+- Churn by internet service
+- Customer tenure patterns
+- Monthly and total charge patterns
+- Customer characteristics associated with higher churn
+
+This helped establish the business patterns that were later explored in greater detail through Python-based EDA and machine learning.
+
+---
+---
+
+## 📊 Exploratory Data Analysis
+
+EDA was performed to understand customer behavior, identify churn patterns, and determine which characteristics were associated with higher churn risk.
+
+### Key Findings
+
+- A significant portion of customers are classified as churned, highlighting the need for proactive retention.
+- Month-to-month customers show higher churn compared with customers on longer-term contracts.
+- Customer tenure shows a noticeable relationship with churn behavior, with newer customers generally requiring greater retention attention.
+
+### Churn Distribution
+
+<p align="center">
+  <img src="visuals/images/churn_distribution.png" width="450">
+</p>
+
+### Churn by Contract Type
+
+<p align="center">
+  <img src="visuals/images/churn_by_contract.png" width="450">
+</p>
+
+### Churn by Tenure
+
+<p align="center">
+  <img src="visuals/images/churn_by_tenure.png" width="450">
+</p>
+
+---
+
+## ⚙️ Feature Engineering
+
+The raw customer data was transformed into a model-ready format while preserving the information required for churn prediction.
+
+The feature engineering process included:
+
+- Converting numerical fields such as `TotalCharges` into appropriate numeric formats.
+- Handling missing and inconsistent values.
+- Separating input features from the target variable `Churn`.
+- Identifying numerical and categorical features.
+- Encoding categorical variables for machine learning.
+- Scaling numerical features where required.
+- Building a reusable preprocessing pipeline to ensure the same transformations are applied during training and prediction.
+
+### Feature Groups
+
+| Feature Type | Examples | Processing |
+|---|---|---|
+| Numerical | `tenure`, `MonthlyCharges`, `TotalCharges` | Imputation / Scaling |
+| Categorical | `Contract`, `InternetService`, `PaymentMethod` | Encoding |
+| Target | `Churn` | Binary encoding |
+
+The preprocessing workflow was integrated with the machine learning pipeline so that training and future customer predictions use the same feature transformations.
+
+
+---
+
+## 🤖 Machine Learning & Model Evaluation
+
+After feature engineering, multiple classification algorithms were trained and evaluated to identify the model that provided the most reliable performance for customer churn prediction.
+
+### Models Evaluated
+
+The following models were compared:
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- Gradient Boosting
+- XGBoost
+
+The models were evaluated using:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- ROC-AUC
+- Cross-validation performance
+
+### Model Selection
+
+Rather than selecting a model based on a single metric, the models were compared across multiple evaluation metrics and validation performance.
+
+**Logistic Regression was selected as the final production model** because it provided the best overall balance of performance and generalization for this project.
+
+The selected model was then integrated with the preprocessing pipeline and saved for reuse in the Streamlit prediction application.
+
+### Production Prediction Flow
+
+```text
+Customer Input
+      ↓
+Preprocessing Pipeline
+      ↓
+Feature Transformation
+      ↓
+Logistic Regression
+      ↓
+Churn Prediction
+      ↓
+Churn Probability
+      ↓
+Risk Classification
+
+## Model Comparison
+
 
