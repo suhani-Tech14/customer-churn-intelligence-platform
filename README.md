@@ -217,11 +217,31 @@ The models were evaluated using:
 - ROC-AUC
 - Cross-validation performance
 
+ ### Model Comparison
+
+The evaluated models were compared using multiple classification metrics rather than relying on accuracy alone.
+
+| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| **Logistic Regression** | **82.11%** | **68.50%** | **60.05%** | **64.00%** | **86.21%** |
+| Gradient Boosting | 80.77% | 67.47% | 52.82% | 59.25% | 85.96% |
+| XGBoost | 78.85% | 62.38% | 50.67% | 55.92% | 84.32% |
+| Random Forest | 79.70% | 66.29% | 47.45% | 55.31% | 83.48% |
+| Decision Tree | 71.54% | 46.41% | 48.53% | 47.44% | 64.29% |
+
 ### Model Selection
+
 
 Rather than selecting a model based on a single metric, the models were compared across multiple evaluation metrics and validation performance.
 
 **Logistic Regression was selected as the final production model** because it provided the best overall balance of performance and generalization for this project.
+
+It achieved the highest:
+
+- Accuracy — **82.11%**
+- Recall — **60.05%**
+- F1 Score — **64.00%**
+- ROC-AUC — **86.21%**
 
 The selected model was then integrated with the preprocessing pipeline and saved for reuse in the Streamlit prediction application.
 
@@ -242,6 +262,121 @@ Churn Probability
       ↓
 Risk Classification
 
-## Model Comparison
+
+---
+
+## 🔍 Explainable AI — SHAP
+
+A churn prediction is more useful when the business can understand **why** a customer is considered at risk.
+
+To make the model predictions interpretable, SHAP (SHapley Additive exPlanations) was implemented to identify the features contributing to individual churn predictions.
+
+### What SHAP Provides
+
+- Identifies the features influencing a prediction.
+- Shows whether a feature increases or decreases churn risk.
+- Provides feature-level explanations for individual customers.
+- Helps convert model predictions into actionable business insights.
+
+### Explainability Workflow
+
+```text
+Customer Data
+      ↓
+Preprocessing
+      ↓
+Logistic Regression
+      ↓
+Churn Prediction
+      ↓
+SHAP Explanation
+      ↓
+Top Contributing Features
+      ↓
+Business Interpretation
+
+### SHAP Feature Importance
+
+<p align="center">
+  <img src="visuals/images/shap_feature_importance.png" width="550">
+</p>
+
+
+---
+
+## 👥 Customer Segmentation
+
+Customer segmentation was implemented to group customers based on their characteristics and behavior.
+
+The purpose of segmentation is to move beyond a simple churn prediction and understand **which types of customers require different retention strategies**.
+
+### Segmentation Approach
+
+Customer characteristics were analyzed to identify meaningful customer groups based on factors such as:
+
+- Customer tenure
+- Monthly charges
+- Service usage
+- Contract characteristics
+- Churn-related behavior
+
+The resulting segments provide an additional business layer that helps the platform identify customer groups that may require different retention strategies.
+
+### Business Value
+
+Segmentation helps answer questions such as:
+
+- Which customer groups have higher churn exposure?
+- Which groups contain high-value customers?
+- Which segments may require stronger retention efforts?
+- Can retention strategies be customized for different customer groups?
+
+This allows the platform to move from:
+
+**Customer Prediction → Customer Segment → Retention Strategy**
+
+### Customer Segment Overview
+
+<p align="center">
+  <img src="visuals/images/customer_segments.png" width="550">
+</p>
+
+---
+
+## 💡 Retention Recommendation Engine
+
+The recommendation engine converts churn predictions and customer insights into actionable retention strategies.
+
+Instead of only identifying customers who are likely to churn, the platform uses customer risk information and contributing factors to suggest appropriate retention actions.
+
+### Recommendation Workflow
+
+```text
+Customer Data
+      ↓
+Churn Prediction
+      ↓
+Churn Probability
+      ↓
+Risk Classification
+      ↓
+Top Contributing Factors
+      ↓
+Retention Recommendation
+
+### Retention Recommendation in Action
+
+The Streamlit application combines the churn prediction, risk classification, and contributing factors to provide a targeted retention recommendation.
+
+<p align="center">
+  <img src="visuals/images/recommendation_engine.png" width="850">
+</p>
+
+
+
+
+
+
+
 
 
