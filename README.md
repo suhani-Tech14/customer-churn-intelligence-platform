@@ -1,4 +1,4 @@
-           #  __Customer Churn Intelligence Platform__
+          # __Customer Churn Intelligence Platform__
 
              Predict • Explain • Segment • Recommend
 
