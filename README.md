@@ -263,8 +263,6 @@ Churn Probability
 Risk Classification
 
 
----
-
 ## 🔍 Explainable AI — SHAP
 
 A churn prediction is more useful when the business can understand **why** a customer is considered at risk.
@@ -301,8 +299,6 @@ Business Interpretation
   <img src="visuals/images/shap_feature_importance.png" width="550">
 </p>
 
-
----
 
 ## 👥 Customer Segmentation
 
@@ -341,7 +337,6 @@ This allows the platform to move from:
   <img src="visuals/images/customer_segments.png" width="550">
 </p>
 
----
 
 ## 💡 Retention Recommendation Engine
 
