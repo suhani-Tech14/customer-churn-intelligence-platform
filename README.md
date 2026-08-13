@@ -349,6 +349,179 @@ The Streamlit application combines the churn prediction, risk classification, an
   <img src="visuals/images/recommendation_engine.png" width="850">
 </p>
 
+---
+
+## 🖥️ Streamlit Application
+
+The trained machine learning pipeline was integrated into a Streamlit web application to make the churn prediction system interactive and accessible.
+
+The application allows users to enter customer information, generate churn predictions, view risk levels and probabilities, explore analytics, and receive retention recommendations.
+
+### Prediction Page
+
+The prediction page allows users to input customer details and get an instant churn prediction.
+
+<p align="center">
+  <img src="visuals/images/streamlit_prediction.png" width="850" alt="Prediction page screenshot">
+</p>
+
+
+### Analytics Page
+
+The analytics page provides an overview of churn patterns, model performance, and key metrics.
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="visuals/images/streamlit_analytics.png" width="520" alt="Analytics - part 1"><br>
+      <em>Part 1</em>
+    </td>
+    <td align="center">
+      <img src="visuals/images/streamlit_analytics1.png" width="520" alt="Analytics - part 2"><br>
+      <em>Part 2</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="visuals/images/streamlit_analytics2.png" width="520" alt="Analytics - part 3"><br>
+      <em>Part 3</em>
+    </td>
+  </tr>
+</table>
+
+
+### Recommendation Page 
+
+The recommendation page shows personalized retention strategies based on churn risk and contributing factors.
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="visuals/images/recommendation_engine.png" width="520" alt="Recommendation - part 1"><br>
+      <em>Part 1</em>
+    </td>
+    <td align="center">
+      <img src="visuals/images/recommendation_engine1.png" width="520" alt="Recommendation - part 2"><br>
+      <em>Part 2</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="visuals/images/recommendation_engine2.png" width="520" alt="Recommendation - part 3"><br>
+      <em>Part 3</em>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 📊 Executive Power BI Dashboard
+
+The project also includes an executive-level Power BI dashboard designed to convert customer churn predictions into business insights.
+
+The dashboard brings together key customer metrics, churn patterns, risk distribution, customer segmentation, and retention recommendations in a single view.
+
+### Dashboard Highlights
+
+- Customer and churn KPIs
+- Churn rate analysis
+- Customer risk distribution
+- Customer segmentation
+- Key churn-driving factors
+- Retention recommendations
+- Interactive filtering for business analysis
+
+<p align="center">
+  <img src="visuals/images/powerbi_dashboard.png" width="1000" alt="Customer Churn Intelligence Power BI Dashboard">
+</p>
+
+---
+
+## 🚀 Deployment
+
+The Customer Churn Intelligence Platform was deployed as an interactive Streamlit web application.
+
+The deployed application allows users to interact with the trained machine learning pipeline without running the notebooks manually.
+
+### Production Flow
+
+```text
+User
+ ↓
+Streamlit Application
+ ↓
+Preprocessing Pipeline
+ ↓
+Logistic Regression Model
+ ↓
+Churn Probability
+ ↓
+Risk Classification
+ ↓
+SHAP Explanation
+ ↓
+Retention Recommendation
+```
+https://github.com/suhani-Tech14/customer-churn-intelligence-platform
+
+
+---
+
+## 🛠️ Tech Stack
+
+| Area | Tools |
+|---|---|
+| Programming | Python |
+| Data Processing | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn |
+| Database | SQL Server |
+| Machine Learning | Scikit-learn |
+| Model | Logistic Regression |
+| Explainable AI | SHAP |
+| Dashboard | Power BI |
+| Web Application | Streamlit |
+| Model Serialization | Joblib |
+| Development | Jupyter Notebook, VS Code |
+| Version Control | Git, GitHub |
+
+
+---
+
+## ▶️ How to Run Locally
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_LINK
+cd YOUR_PROJECT_FOLDER
+
+### 2. Create a virtual environment
+python -m venv venv
+
+### 3. Activate the environment
+venv\Scripts\activate
+
+### 4. Install dependencies
+pip install -r requirements.txt
+
+### 5. Run the Streamlit application
+streamlit run app.py
+```
+
+**Important:** if your actual Streamlit entry file is not `app.py`, use your real filename
+
+## 🔮 Future Improvements
+
+Some potential improvements for future versions include:
+
+- Automated model retraining with new customer data
+- Real-time customer data integration
+- Advanced customer-level retention optimization
+- Model monitoring and drift detection
+- Cloud-based production infrastructure
+
+
+
 
 
 
