@@ -262,11 +262,7 @@ Churn Probability
       ↓
 Risk Classification
 
-## 🔍 Explainable AI — SHAP
 
-A churn prediction is more useful when the business can understand **why** a customer is considered at risk.
-
-To make the model predictions interpretable, SHAP (SHapley Additive exPlanations) was implemented to identify the features contributing to individual churn predictions.
 
 
 
