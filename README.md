@@ -487,26 +487,59 @@ https://github.com/suhani-Tech14/customer-churn-intelligence-platform
 
 ---
 
-## ▶️ How to Run Locally
+## 🚀 Installation & Quick Start
 
-### 1. Clone the repository
+### Prerequisites
 
-```bash
-git clone YOUR_GITHUB_REPOSITORY_LINK
-cd YOUR_PROJECT_FOLDER
+- Python 3.8+  
+- pip
 
-### 2. Create a virtual environment
-python -m venv venv
+### Steps
 
-### 3. Activate the environment
-venv\Scripts\activate
+1. **Clone the repository**
 
-### 4. Install dependencies
-pip install -r requirements.txt
+   ```bash
+   git clone https://github.com/suhani-Tech14/customer-churn-intelligence-platform.git
+   cd customer-churn-intelligence-platform
+   ```
 
-### 5. Run the Streamlit application
-streamlit run app.py
-```
+2. **Create a virtual environment**
+
+   ```bash
+   python -m venv venv
+   ```
+
+3. **Activate the environment**
+
+   - On Windows:
+
+     ```bash
+     venv\Scripts\activate
+     ```
+
+   - On macOS / Linux:
+
+     ```bash
+     source venv/bin/activate
+     ```
+
+4. **Install dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+5. **Run the Streamlit application**
+
+   ```bash
+   streamlit run app.py
+   ```
+
+6. **Open the app in your browser**
+
+   ```text
+   http://localhost:8501
+   ```
 
 **Important:** if your actual Streamlit entry file is not `app.py`, use your real filename
 
