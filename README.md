@@ -21,12 +21,14 @@
 <p align="center">
   <img src="visuals/images//powerbi_dashboard.png" width="950">
 </p>
+
 ### Executive Power BI Dashboard
 
 
 <p align="center">
   <img src="visuals/images/streamlit_home.png" width="950">
 </p>
+
 ### Streamlit Application
 
 
